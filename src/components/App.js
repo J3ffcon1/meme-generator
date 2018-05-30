@@ -3,10 +3,10 @@ import cowsay from 'cowsay-browser';
 import dom2image from 'dom-to-image';
 import fileSaver from 'file-saver';
 
-let cows = null;
-cowsay.list((err, _cows) => {
-  cows = _cows;
-});
+// let cows = null;
+// cowsay.list((err, _cows) => {
+//   cows = _cows;
+// });
 
 export default class App extends Component {
 
@@ -14,7 +14,6 @@ export default class App extends Component {
     super();
 
     this.state = {
-      cows,
       selected: 'default',
       name: 'Portland',
       color: '#000000',
@@ -55,14 +54,19 @@ export default class App extends Component {
   }
 
   render() {
-    const { cows, selected, name, color, image } = this.state;
+    const { selected, name, color, image } = this.state;
 
     return (
       <main>
-        <h1>Enter Your Meme</h1>
+        <h1>Build Your Dank Meme</h1>
         <section>
           <div>
             <label>
+                Add Header:
+              <input
+                type="header"
+                onChange = {event => this.handleNameChange(event)} />
+                            
                             Image URL:
               <input onChange={event => this.handleImageSrc(event)} />
                             Upload Image:

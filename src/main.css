@@ -1,7 +1,6 @@
-body {
+html {
     font-family: sans-serif;
-     background: url("../assets/Adventure-Time.jpg");
-     background-repeat: no-repeat;
+     background: url("../assets/Adventure-Time.jpg") center center fixed no-repeat;
      background-size: cover;
 }
 h1{

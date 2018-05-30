@@ -20,6 +20,16 @@ module.exports = {
         }
       },
       {
+        test: /\.(png|jpg|gif)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'dirname/[hash].[ext]'
+          }
+        } 
+        ]
+      },
+      {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [

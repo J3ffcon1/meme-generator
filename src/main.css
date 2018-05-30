@@ -1,0 +1,7 @@
+body {
+    font-family: sans-serif;
+    background-color: aquamarine;
+     background: url("../assets/Adventure-Time.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+}

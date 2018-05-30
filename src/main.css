@@ -1,10 +1,17 @@
 body {
     font-family: sans-serif;
-    background-color: aquamarine;
      background: url("../assets/Adventure-Time.jpg");
      background-repeat: no-repeat;
      background-size: cover;
 }
 h1{
+    text-align: center;
+}
+
+section{
+    text-align: center;
+    align-items: center;
+}
+#export-button {
     text-align: center;
 }

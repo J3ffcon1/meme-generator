@@ -57,23 +57,14 @@ export default class App extends Component {
   render() {
     const { cows, selected, name, color, image } = this.state;
 
-    const cowSaid = cowsay.say({
-      text: name,
-      f: selected
-    });
-
     return (
       <main>
         <h1>Enter Your Meme</h1>
         <section>
           <div>
             <label>
-                            Image Src:
+                            Image URL:
               <input onChange={event => this.handleImageSrc(event)} />
-            </label>
-          </div>
-          <div>
-            <label>
                             Upload Image:
               <input
                 type="file"
@@ -82,19 +73,19 @@ export default class App extends Component {
             </label>
           </div>
 
-          <div>
-            <button onClick={() => this.handleExport()}>
-                            Export
-            </button>
-          </div>
 
           <div className="image-container"
             ref={node => this.imageExport = node}
           >
-            <h1>Thats a Dank meme!</h1>
+            {/* <h1>Thats a Dank meme!</h1> */}
             <img src={image} />
           </div>
         </section>
+        <div id ="export-button">
+          <button onClick={() => this.handleExport()}>
+                            Export Meme
+          </button>
+        </div>
       </main>
     );
 

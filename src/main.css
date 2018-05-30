@@ -1,0 +1,16 @@
+html {
+    font-family: sans-serif;
+     background: url("../assets/Adventure-Time.jpg") center center fixed no-repeat;
+     background-size: cover;
+}
+h1{
+    text-align: center;
+}
+
+section{
+    text-align: center;
+    align-items: center;
+}
+#export-button {
+    text-align: center;
+}

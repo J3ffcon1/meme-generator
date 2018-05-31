@@ -9,12 +9,10 @@ export default class App extends Component {
     super();
 
     this.state = {
-      selected: 'default',
-      name: 'Portland',
-      color: '#000000',
-      image: 'https://ww2.kqed.org/wp-content/uploads/sites/12/2018/01/Portlandia-Candace-and-Toni-Feminist-City-Bookstore-web-1180x664.jpg',
       header: 'When someone walks in',
-      footer: 'And you know they\'re going to offend you.' 
+      footer: 'And you know they\'re going to offend you.',
+      image: 'https://ww2.kqed.org/wp-content/uploads/sites/12/2018/01/Portlandia-Candace-and-Toni-Feminist-City-Bookstore-web-1180x664.jpg',
+      color: '#000000'
     };
   }
 
@@ -57,31 +55,38 @@ export default class App extends Component {
   }
 
   render() {
-    const { selected, name, color, image, header } = this.state;
+    const { header, footer, image, color  } = this.state;
 
     return (
       <main>
         <h1>Build Your Dank Meme</h1>
         <section>
           <div>
+            <label>
            
                 Add Header:
-            <input
-              type="text"
-              onChange = {event => this.handleHeaderChange(event)} />
+              <input
+                type="text"
+                onChange = {event => this.handleHeaderChange(event)} />
+            </label>
+            <label>
               Add Footer:
-            <input
-              type = "text"
-              onChange = {event => this.handleFooterChange(event)}/>
-
+              <input
+                type = "text"
+                onChange = {event => this.handleFooterChange(event)}/>
+            </label>
+            <label>
                             
                             Image URL:
-            <input onChange={event => this.handleImageSrc(event)} />
+              <input onChange={event => this.handleImageSrc(event)} />
+            </label>
+            <label>
                             Upload Image:
-            <input
-              type="file"
-              onChange={event => this.handleUpload(event)}
-            />
+              <input
+                type="file"
+                onChange={event => this.handleUpload(event)}
+              />
+            </label>
            
           </div>
 

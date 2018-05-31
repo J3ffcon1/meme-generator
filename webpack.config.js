@@ -1,5 +1,7 @@
 /* eslint-env node */
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -13,6 +15,13 @@ module.exports = {
   devServer: {
     contentBase: './dist'
   },
+  plugins: [
+    new CleanWebpackPlugin(`${path}/bundle.*.js`),
+    new HtmlWebpackPlugin({
+      title: 'meme-generator',
+      filename: 'dist/index.html'
+    })
+  ]
   module: {
     rules: [
       {

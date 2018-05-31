@@ -13,6 +13,7 @@ export default class App extends Component {
       name: 'Portland',
       color: '#000000',
       image: 'https://ww2.kqed.org/wp-content/uploads/sites/12/2018/01/Portlandia-Candace-and-Toni-Feminist-City-Bookstore-web-1180x664.jpg'
+      header: null,
     };
   }
 
@@ -30,6 +31,9 @@ export default class App extends Component {
 
   handleImageSrc({ target }) {
     this.setState({ image: target.value });
+  }
+  handleHeaderChange({ target}) {
+    this.setState({header: tgarget.value})
   }
 
   handleUpload({ target }) {

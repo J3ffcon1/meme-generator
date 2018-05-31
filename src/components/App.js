@@ -12,8 +12,9 @@ export default class App extends Component {
       selected: 'default',
       name: 'Portland',
       color: '#000000',
-      image: 'https://ww2.kqed.org/wp-content/uploads/sites/12/2018/01/Portlandia-Candace-and-Toni-Feminist-City-Bookstore-web-1180x664.jpg'
-      header: null,
+      image: 'https://ww2.kqed.org/wp-content/uploads/sites/12/2018/01/Portlandia-Candace-and-Toni-Feminist-City-Bookstore-web-1180x664.jpg',
+      header: 'When someone walks in',
+      footer: 'And you know they\'re going to offend you.' 
     };
   }
 
@@ -32,8 +33,11 @@ export default class App extends Component {
   handleImageSrc({ target }) {
     this.setState({ image: target.value });
   }
-  handleHeaderChange({ target}) {
-    this.setState({header: tgarget.value})
+  handleHeaderChange({ target  }) {
+    this.setState({  header: target.value  });
+  }
+  handleFooterChange({ target }) {
+    this.setState({ footer: target.value });
   }
 
   handleUpload({ target }) {
@@ -48,32 +52,37 @@ export default class App extends Component {
 
   handleExport() {
     dom2image.toBlob(this.imageExport).then(blob => {
-      fileSaver.saveAs(blob, 'cute-image.png');
+      fileSaver.saveAs(blob, 'dankmeme.png');
     });
   }
 
   render() {
-    const { selected, name, color, image } = this.state;
+    const { selected, name, color, image, header } = this.state;
 
     return (
       <main>
         <h1>Build Your Dank Meme</h1>
         <section>
           <div>
-            <label>
+           
                 Add Header:
-              <input
-                type="header"
-                onChange = {event => this.handleNameChange(event)} />
+            <input
+              type="text"
+              onChange = {event => this.handleHeaderChange(event)} />
+              Add Footer:
+            <input
+              type = "text"
+              onChange = {event => this.handleFooterChange(event)}/>
+
                             
                             Image URL:
-              <input onChange={event => this.handleImageSrc(event)} />
+            <input onChange={event => this.handleImageSrc(event)} />
                             Upload Image:
-              <input
-                type="file"
-                onChange={event => this.handleUpload(event)}
-              />
-            </label>
+            <input
+              type="file"
+              onChange={event => this.handleUpload(event)}
+            />
+           
           </div>
 
 

@@ -21,7 +21,7 @@ module.exports = {
       title: 'meme-generator',
       filename: 'dist/index.html'
     })
-  ]
+  ],
   module: {
     rules: [
       {

@@ -19,7 +19,7 @@ module.exports = {
     new CleanWebpackPlugin(`${path}/bundle.*.js`),
     new HtmlWebpackPlugin({
       title: 'meme-generator',
-      filename: 'dist/index.html'
+      filename: './dist/index.html'
     })
   ],
   module: {

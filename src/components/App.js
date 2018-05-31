@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import cowsay from 'cowsay-browser';
 import dom2image from 'dom-to-image';
 import fileSaver from 'file-saver';
 
-// let cows = null;
-// cowsay.list((err, _cows) => {
-//   cows = _cows;
-// });
 
 export default class App extends Component {
 

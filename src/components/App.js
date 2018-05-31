@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import cowsay from 'cowsay-browser';
 import dom2image from 'dom-to-image';
 import fileSaver from 'file-saver';
 
-// let cows = null;
-// cowsay.list((err, _cows) => {
-//   cows = _cows;
-// });
 
 export default class App extends Component {
 
@@ -14,10 +9,10 @@ export default class App extends Component {
     super();
 
     this.state = {
-      selected: 'default',
-      name: 'Portland',
-      color: '#000000',
-      image: null
+      header: 'When someone walks in',
+      footer: 'And you know they\'re going to offend you.',
+      image: 'https://ww2.kqed.org/wp-content/uploads/sites/12/2018/01/Portlandia-Candace-and-Toni-Feminist-City-Bookstore-web-1180x664.jpg',
+      color: '#000000'
     };
   }
 
@@ -36,6 +31,12 @@ export default class App extends Component {
   handleImageSrc({ target }) {
     this.setState({ image: target.value });
   }
+  handleHeaderChange({ target  }) {
+    this.setState({  header: target.value  });
+  }
+  handleFooterChange({ target }) {
+    this.setState({ footer: target.value });
+  }
 
   handleUpload({ target }) {
     const reader = new FileReader();
@@ -49,12 +50,12 @@ export default class App extends Component {
 
   handleExport() {
     dom2image.toBlob(this.imageExport).then(blob => {
-      fileSaver.saveAs(blob, 'cute-image.png');
+      fileSaver.saveAs(blob, 'dankmeme.png');
     });
   }
 
   render() {
-    const { selected, name, color, image } = this.state;
+    const { header, footer, image, color  } = this.state;
 
     return (
       <main>
@@ -62,19 +63,31 @@ export default class App extends Component {
         <section>
           <div>
             <label>
+           
                 Add Header:
               <input
-                type="header"
-                onChange = {event => this.handleNameChange(event)} />
+                type="text"
+                onChange = {event => this.handleHeaderChange(event)} />
+            </label>
+            <label>
+              Add Footer:
+              <input
+                type = "text"
+                onChange = {event => this.handleFooterChange(event)}/>
+            </label>
+            <label>
                             
                             Image URL:
               <input onChange={event => this.handleImageSrc(event)} />
+            </label>
+            <label>
                             Upload Image:
               <input
                 type="file"
                 onChange={event => this.handleUpload(event)}
               />
             </label>
+           
           </div>
 
 

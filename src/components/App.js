@@ -24,9 +24,7 @@ export default class App extends Component {
     this.setState({ color: target.value });
   }
 
-  handleCowChange({ target }) {
-    this.setState({ selected: target.value });
-  }
+
 
   handleImageSrc({ target }) {
     this.setState({ image: target.value });
@@ -67,18 +65,23 @@ export default class App extends Component {
                 Add Header:
               <input
                 type="text"
+                value={header}
                 onChange = {event => this.handleHeaderChange(event)} />
             </label>
             <label>
               Add Footer:
               <input
                 type = "text"
+                value={footer}
                 onChange = {event => this.handleFooterChange(event)}/>
             </label>
             <label>
                             
                             Image URL:
-              <input onChange={event => this.handleImageSrc(event)} />
+              <input 
+              type="url"
+              value={image}
+              onChange={event => this.handleImageSrc(event)} />
             </label>
             <label>
                             Upload Image:

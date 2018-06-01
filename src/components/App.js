@@ -84,9 +84,9 @@ export default class App extends Component {
               Upload Image:
               <input
                 type="file"
-              onChange={event => this.handleUpload(event)} />
-          </label>
-           </div>
+                onChange={event => this.handleUpload(event)} />
+            </label>
+          </div>
 
 
           <div className="image-container"

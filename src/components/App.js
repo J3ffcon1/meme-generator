@@ -50,7 +50,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { header, footer, image, color } = this.state;
+    const { header, footer, image } = this.state;
 
     return (
       <main>
@@ -84,9 +84,9 @@ export default class App extends Component {
               Upload Image:
               <input
                 type="file"
-                onChange={event => this.handleUpload(event)} />
-            </label>
-          </div>
+              onChange={event => this.handleUpload(event)} />
+          </label>
+           </div>
 
 
           <div className="image-container"
@@ -99,7 +99,7 @@ export default class App extends Component {
           <div id="export-button">
             <button onClick={() => this.handleExport()}>
               Export Meme
-          </button>
+            </button>
 
           </div>
         </section>

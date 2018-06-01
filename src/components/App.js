@@ -27,8 +27,8 @@ export default class App extends Component {
   handleImageSrc({ target }) {
     this.setState({ image: target.value });
   }
-  handleHeaderChange({ target  }) {
-    this.setState({  header: target.value  });
+  handleHeaderChange({ target }) {
+    this.setState({ header: target.value });
   }
   handleFooterChange({ target }) {
     this.setState({ footer: target.value });
@@ -43,7 +43,6 @@ export default class App extends Component {
       this.setState({ image: reader.result });
     };
   }
-
   handleExport() {
     dom2image.toBlob(this.imageExport).then(blob => {
       fileSaver.saveAs(blob, 'dankmeme.png');
@@ -51,7 +50,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { header, footer, image, color  } = this.state;
+    const { header, footer, image, color } = this.state;
 
     return (
       <main>
@@ -59,50 +58,50 @@ export default class App extends Component {
         <section>
           <div>
             <label>
-           
-                Add Header:
+
+              Add Header:
               <input
                 type="text"
                 value={header}
-                onChange = {event => this.handleHeaderChange(event)} />
+                onChange={event => this.handleHeaderChange(event)} />
             </label>
             <label>
               Add Footer:
               <input
-                type = "text"
+                type="text"
                 value={footer}
-                onChange = {event => this.handleFooterChange(event)}/>
+                onChange={event => this.handleFooterChange(event)} />
             </label>
             <label>
-                            
-                            Image URL:
-              <input 
-              type="url"
-              value={image}
-              onChange={event => this.handleImageSrc(event)} />
+
+              Image URL:
+              <input
+                type="url"
+                value={image}
+                onChange={event => this.handleImageSrc(event)} />
             </label>
             <label>
-                            Upload Image:
+              Upload Image:
               <input
                 type="file"
-                onChange={event => this.handleUpload(event)}/>
+                onChange={event => this.handleUpload(event)} />
             </label>
           </div>
-       
-        
+
+
           <div className="image-container"
             ref={node => this.imageExport = node}>
-            <div id = "upper-meme">{header}</div>
-            <img src={image}/>
-            <div id = "lower-meme">{footer}</div>
+            <div id="upper-meme">{header}</div>
+            <img src={image} />
+            <div id="lower-meme">{footer}</div>
           </div>
-      
-        <div id ="export-button">
-          <button onClick={() => this.handleExport()}>
-                            Export Meme
+
+          <div id="export-button">
+            <button onClick={() => this.handleExport()}>
+              Export Meme
           </button>
-       
-        </div>
+
+          </div>
         </section>
       </main>
     );

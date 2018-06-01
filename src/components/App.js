@@ -11,7 +11,7 @@ export default class App extends Component {
     this.state = {
       header: 'When someone walks in',
       footer: 'And you know they\'re going to offend you.',
-      image: 'https://ww2.kqed.org/wp-content/uploads/sites/12/2018/01/Portlandia-Candace-and-Toni-Feminist-City-Bookstore-web-1180x664.jpg',
+      image: 'http://i0.kym-cdn.com/photos/images/original/000/045/900/lsp.PNG',
       color: '#000000'
     };
   }
@@ -23,8 +23,6 @@ export default class App extends Component {
   handleColorChange({ target }) {
     this.setState({ color: target.value });
   }
-
-
 
   handleImageSrc({ target }) {
     this.setState({ image: target.value });
@@ -87,25 +85,25 @@ export default class App extends Component {
                             Upload Image:
               <input
                 type="file"
-                onChange={event => this.handleUpload(event)}
-              />
+                onChange={event => this.handleUpload(event)}/>
             </label>
-           
           </div>
-
-
+       
+        
           <div className="image-container"
-            ref={node => this.imageExport = node}
-          >
-            {/* <h1>Thats a Dank meme!</h1> */}
-            <img src={image} />
+            ref={node => this.imageExport = node}>
+            <div id = "upper-meme">{header}</div>
+            <img src={image}/>
+            <div id = "lower-meme">{footer}</div>
           </div>
-        </section>
+      
         <div id ="export-button">
           <button onClick={() => this.handleExport()}>
                             Export Meme
           </button>
+       
         </div>
+        </section>
       </main>
     );
 

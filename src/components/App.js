@@ -56,7 +56,7 @@ export default class App extends Component {
       <main>
         <h1>Build Your Dank Meme</h1>
         <section>
-          <div>
+          <div id = "form-data">
             <label>
 
               Add Header:
@@ -86,7 +86,22 @@ export default class App extends Component {
                 type="file"
                 onChange={event => this.handleUpload(event)} />
             </label>
+            <label>
+              <br />
+            Change Text-Color:
+              <input
+                type="text"
+                onChange={event => this.handleColorChange(event)} />
+            </label>
+            <label>
+              <br />
+              Change Font-style:
+              <input
+                type="text"
+                onChange={event => this.handleFontChange(event)} />
+            </label>
           </div>
+
 
 
           <div className="image-container"
